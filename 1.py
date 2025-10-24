@@ -21,10 +21,12 @@ model = models.Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 history = model.fit(x_train, y_train, epochs=5, batch_size=128, validation_split=0.1)
-print(history)
 # history.history['loss','val_loss','accuracy','val_accuracy']
 
-plt.plot(history.history['accuracy'], label='train_acc')
-plt.plot(history.history['val_loss'], label='val_loss')
+plt.plot(history.history['loss'], label = "train_loss")
+plt.plot(history.history['val_loss'], label = "val_loss")
+'''plt.plot(history.history['accuracy'], label='train_acc')
+plt.plot(history.history['val_loss'], label='val_loss')'''
 plt.legend()
-plt.show
+plt.show()
+
